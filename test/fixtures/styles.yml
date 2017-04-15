@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: one
+  user: one
+  name: MyString
+  method: MyText
+  products: MyText
+  date: 2017-04-15
+  durability: 1
+  image: MyString
+  own: false
+  privacy: false
+  tags: MyString
+
+two:
+  type: two
+  user: two
+  name: MyString
+  method: MyText
+  products: MyText
+  date: 2017-04-15
+  durability: 1
+  image: MyString
+  own: false
+  privacy: false
+  tags: MyString
