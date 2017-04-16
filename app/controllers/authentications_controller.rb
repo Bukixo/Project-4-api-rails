@@ -9,6 +9,13 @@ class AuthenticationsController < ApplicationController
  end
 
   def login
+    user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
+        render json: user, status: :ok
+      else
+        render json: { errors: ["Invalid login credentials."] }, status: 401
+  end
+
   end
 
   private
