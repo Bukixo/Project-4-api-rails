@@ -10,9 +10,8 @@ class StylesController < ApplicationController
 
   # GET /styles/1
   def show
-    render json: @style
+    render json: @style, include: ['liked_styles.comments', 'styles_created.comments','liked_styles.cocomments.user', 'styles_created.comments.user']
 
-    render json: @users, include: ['liked_styles.comments', 'styles_created.comments']
   end
 
   # POST /styles
