@@ -17,6 +17,7 @@ class StylesController < ApplicationController
   # POST /styles
   def create
     @style = Style.new(style_params)
+    @style.user = current_user
 
     if @style.save
       render json: @style, status: :created, location: @style

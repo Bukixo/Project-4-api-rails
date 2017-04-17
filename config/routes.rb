@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   scope :api do
-      resources :comments
-      resources :styles
-      resources :types
-      resources :users, except: [:create]
-
-      post 'register', to: 'authentications#register'
-      post 'login', to: 'authentications#login'
+    resources :users, except: [:create]
+    resources :posts
+    post 'register', to: 'authentications#register'
+    post 'login', to: 'authentications#login'
+    post 'oauth/github', to: 'oauth#github'
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_user!
+  #protecting the new, edit and delete API routes from users who aren't logged in -We then allowing unauthorized user to view events by including the following in the StylesController: skip_before_action :authenticate_user!, only: [:index, :show] 
 
   def authenticate_user!
     render json: { errors: ["Unauthorized"] }, status: 401 unless user_signed_in?

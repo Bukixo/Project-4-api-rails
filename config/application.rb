@@ -30,7 +30,7 @@ module Project4Rails
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', :headers => :any, :methods => :any
       end
     end
     config.eager_load_paths << Rails.root.join('lib')

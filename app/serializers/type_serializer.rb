@@ -1,3 +1,4 @@
 class TypeSerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :styles
+  attributes :id, :name
 end
