@@ -4,7 +4,7 @@ class CreateStyles < ActiveRecord::Migration[5.0]
       t.references :type, foreign_key: true
       t.references :user, foreign_key: true
       t.string :name
-      t.text :method
+      t.text :procedure
       t.text :products
       t.date :date
       t.integer :durability

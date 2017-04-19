@@ -16,6 +16,7 @@ class StylesController < ApplicationController
 
   # POST /styles
   def create
+    #  @style = Style.new(Uploader.upload(style_params))
     @style = Style.new(style_params)
     @style.user = current_user
 
@@ -48,6 +49,6 @@ class StylesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def style_params
-      params.require(:style).permit(:type_id, :user_id, :name, :method, :products, :date, :durability, :image, :own, :privacy, :tags, likes_ids:[])
+      params.require(:style).permit(:type_id, :user, :name, :procedure, :products, :date, :durability, :image, :own, :privacy, :tags, like_ids: [])
     end
 end

@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20170417201845) do
     t.integer  "type_id"
     t.integer  "user_id"
     t.string   "name"
-    t.text     "method"
+    t.text     "procedure"
     t.text     "products"
     t.date     "date"
     t.integer  "durability"

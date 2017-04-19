@@ -29,8 +29,7 @@ class OauthController < ApplicationController
       #422 error click on the error on the console network - All- should print error message
       if user.save
         token = Auth.issue({ id: user.id })
-        render json: { user: UserSerializer.new(user), token: token
-        }, status: :ok
+        render json: {messages: 'WORK GOD DAMMNIT ', user: UserSerializer.new(user), token: token}, status: :ok
       else
         render json: { errors: user.errors.full_messages }, status:
         :unprocessable_entity
