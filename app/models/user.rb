@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :styles_created, class_name: "Style", foreign_key: "user_id"
   has_and_belongs_to_many :liked_styles, class_name: "Style", join_table: "styles_users"
   has_many :comments
+  mount_uploader :image, ImageUploader
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, unless: :oauth_login?
@@ -10,6 +11,6 @@ class User < ApplicationRecord
 
   def oauth_login?
     github_id.present?
-end
+  end
 
 end

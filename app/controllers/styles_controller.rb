@@ -30,7 +30,7 @@ class StylesController < ApplicationController
   # PATCH/PUT /styles/1
   def update
     if @style.update(Uploader.upload(style_params))
-      render json: @style
+      render json: @style§340
     else
       render json: @style.errors, status: :unprocessable_entity
     end
