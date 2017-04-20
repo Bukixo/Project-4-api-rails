@@ -16,8 +16,8 @@ class StylesController < ApplicationController
 
   # POST /styles
   def create
-    #  @style = Style.new(Uploader.upload(style_params))
-    @style = Style.new(style_params)
+    @style = Style.new(Uploader.upload(style_params))
+    # @style = Style.new(style_params)
     @style.user = current_user
 
     if @style.save
@@ -29,7 +29,7 @@ class StylesController < ApplicationController
 
   # PATCH/PUT /styles/1
   def update
-    if @style.update(style_params)
+    if @style.update(Uploader.upload(style_params))
       render json: @style
     else
       render json: @style.errors, status: :unprocessable_entity
@@ -49,6 +49,6 @@ class StylesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def style_params
-      params.require(:style).permit(:type_id, :user, :name, :procedure, :products, :date, :durability, :image, :own, :privacy, :tags, like_ids: [])
+      params.require(:style).permit(:type_id, :user, :name, :procedure, :products, :date, :durability, :image, :own, :privacy, :tags, :base64, like_ids:[])
     end
 end
