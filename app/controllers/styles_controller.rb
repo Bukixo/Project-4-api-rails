@@ -1,6 +1,6 @@
 class StylesController < ApplicationController
   before_action :set_style, only: [:show, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:index]
 
   # GET /styles
   def index
@@ -18,7 +18,7 @@ class StylesController < ApplicationController
   # POST /styles
   def create
     @style = Style.new(Uploader.upload(style_params))
-    # @silstyle = Style.new(style_params)
+    # @style = Style.new(style_params)
     @style.user = current_user
 
     if @style.save
@@ -31,7 +31,7 @@ class StylesController < ApplicationController
   # PATCH/PUT /styles/1
   def update
     if @style.update(Uploader.upload(style_params))
-      render json: @style
+      render json: @style§340
     else
       render json: @style.errors, status: :unprocessable_entity
     end
