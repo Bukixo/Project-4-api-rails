@@ -21,7 +21,7 @@ end
 
   private
   def user_params
-    Hash.new.merge! params.slice(:name, :email, :password, :password_confirmation)
+    params.permit(:name, :email, :password, :password_confirmation, :base64)
   end
 
 end

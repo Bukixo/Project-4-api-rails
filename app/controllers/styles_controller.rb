@@ -18,7 +18,7 @@ class StylesController < ApplicationController
   # POST /styles
   def create
     @style = Style.new(Uploader.upload(style_params))
-    # @style = Style.new(style_params)
+    # @silstyle = Style.new(style_params)
     @style.user = current_user
 
     if @style.save
@@ -31,7 +31,7 @@ class StylesController < ApplicationController
   # PATCH/PUT /styles/1
   def update
     if @style.update(Uploader.upload(style_params))
-      render json: @style§340
+      render json: @style
     else
       render json: @style.errors, status: :unprocessable_entity
     end
