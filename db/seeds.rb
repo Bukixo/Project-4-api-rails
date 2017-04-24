@@ -3,7 +3,7 @@
 end
 
 user = User.create!(name: "buki",
- profile_image: "https://scontent.xx.fbcdn.net/v/t1.0-9/15873121_10154245318666245_7518634129702698691_n.jpg?oh=d6d75ad2acf5aa3b662447749e7f2683&oe=59950ABA",
+ image: "https://scontent.xx.fbcdn.net/v/t1.0-9/15873121_10154245318666245_7518634129702698691_n.jpg?oh=d6d75ad2acf5aa3b662447749e7f2683&oe=59950ABA",
  email: "bukikekere@gmail.com",
  password: "password",
  password_confirmation: "password",
